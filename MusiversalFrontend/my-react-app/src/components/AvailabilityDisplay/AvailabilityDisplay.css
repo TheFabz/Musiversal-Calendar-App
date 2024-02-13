@@ -1,0 +1,79 @@
+.availability-display {
+    position: relative;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    align-self: flex-start;
+}
+
+.close-button {
+    background-color: red; /* Changed button color to red */
+    color: white; /* Changed text color to white */
+    border: none;
+    border-radius: 50%; /* Make it round */
+    width: 30px; /* Adjust button size */
+    height: 30px; /* Adjust button size */
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute; /* Position relative to .availability-display */
+    top: 10px;
+    right: 10px;
+}
+
+.close-button:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+.musician-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.musician-info img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.info h2 {
+    margin-bottom: 10px;
+}
+
+.info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info ul li {
+    margin-bottom: 5px;
+    padding-left: 20px; /* Add left padding to create indentation */
+    position: relative; /* Set position to relative for positioning icon */
+}
+
+.info ul li::before {
+    content: "\2022"; /* Unicode bullet character */
+    color: #666; /* Bullet color */
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.availability-slots {
+    margin-top: 20px;
+}
+
+.slot {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slot:hover {
+    background-color: #f9f9f9;
+}
