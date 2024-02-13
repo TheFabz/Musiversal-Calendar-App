@@ -1,4 +1,3 @@
-// AvailabilityDisplay.js
 import React, { useEffect, useState } from 'react';
 import './AvailabilityDisplay.css';
 import Slot from '../Slot/Slot'; // Import the Slot component
@@ -64,7 +63,7 @@ function AvailabilityDisplay({ musician, onClose }) {
                     <h3>Availability Slots</h3>
                     {availability.length > 0 ? (
                         availability.map((slot, index) => (
-                            <Slot key={index} startTime={slot.start_time} endTime={slot.end_time} />
+                            <Slot key={index} slot={slot} />
                         ))
                     ) : (
                         <p>No available slots</p>

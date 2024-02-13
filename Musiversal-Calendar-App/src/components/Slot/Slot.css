@@ -1,0 +1,25 @@
+.slot {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #70c161; /* Light gray */
+
+}
+
+.slot:hover {
+    background-color: #36a123; /* Light gray */
+}
+
+.slot.available:hover {
+    background-color: #a5d6a7; /* Light green */
+}
+
+.slot.booked {
+    background-color: #ffcdd2; /* Light red */
+}
+
+.slot.booked:hover {
+    cursor: default;
+}
