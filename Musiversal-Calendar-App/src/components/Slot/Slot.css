@@ -4,20 +4,19 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    background-color: #70c161; /* Light gray */
-
+    background-color: #70c161; 
 }
 
 .slot:hover {
-    background-color: #36a123; /* Light gray */
+    background-color: #36a123; 
 }
 
 .slot.available:hover {
-    background-color: #a5d6a7; /* Light green */
+    background-color: #a5d6a7;
 }
 
 .slot.booked {
-    background-color: #ffcdd2; /* Light red */
+    background-color: #ffcdd2;
 }
 
 .slot.booked:hover {

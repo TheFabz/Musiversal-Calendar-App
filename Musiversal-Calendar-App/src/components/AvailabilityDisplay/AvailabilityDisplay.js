@@ -40,6 +40,8 @@ function AvailabilityDisplay({ musician, onClose }) {
         fetchAvailabilityData();
     }, [musician]);
 
+    console.log(availability);
+
     return (
         <div className="availability-display">
             <button className="close-button" onClick={onClose}>X</button>
@@ -63,7 +65,7 @@ function AvailabilityDisplay({ musician, onClose }) {
                     <h3>Availability Slots</h3>
                     {availability.length > 0 ? (
                         availability.map((slot, index) => (
-                            <Slot key={index} slot={slot} />
+                            <Slot key={index} slot={slot} musicianServices={musician.services} musicianId={musician._id} />
                         ))
                     ) : (
                         <p>No available slots</p>

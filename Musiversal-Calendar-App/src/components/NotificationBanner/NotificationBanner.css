@@ -1,0 +1,36 @@
+.notification-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.notification-banner.error {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.notification-banner.success {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.notification-banner p {
+    margin: 0;
+    display: inline-block;
+}
+
+.notification-banner .close {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}

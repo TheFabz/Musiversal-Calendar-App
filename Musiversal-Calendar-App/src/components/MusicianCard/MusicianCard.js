@@ -18,17 +18,17 @@ function MusicianCard({ musician, onSelect }) {
         onSelect(musician);
     };
 
-    const handleNextService = () => {
-        setCurrentServiceIndex(prevIndex =>
-            prevIndex === musician.services.length - 1 ? 0 : prevIndex + 1
-        );
-    };
+    // const handleNextService = () => {
+    //     setCurrentServiceIndex(prevIndex =>
+    //         prevIndex === musician.services.length - 1 ? 0 : prevIndex + 1
+    //     );
+    // };
 
-    const handlePrevService = () => {
-        setCurrentServiceIndex(prevIndex =>
-            prevIndex === 0 ? musician.services.length - 1 : prevIndex - 1
-        );
-    };
+    // const handlePrevService = () => {
+    //     setCurrentServiceIndex(prevIndex =>
+    //         prevIndex === 0 ? musician.services.length - 1 : prevIndex - 1
+    //     );
+    // };
 
     return (
         <div className="musician-card" onClick={handleClick}>

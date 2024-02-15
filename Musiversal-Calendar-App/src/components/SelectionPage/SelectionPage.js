@@ -24,7 +24,6 @@ function SelectionPage({ onReceiveMusicians, onSelect }) {
             }
             const data = await response.json();
             setMusicians(data);
-            // Pass musicians data back to the App component
             onReceiveMusicians(data);
         } catch (error) {
             console.error('Error fetching musicians:', error);
@@ -39,7 +38,7 @@ function SelectionPage({ onReceiveMusicians, onSelect }) {
 
     const handleCloseAvailability = () => {
         setShowAvailability(false);
-        setSelectedMusician(null); // Reset selected musician
+        setSelectedMusician(null);
     };
 
     return (
