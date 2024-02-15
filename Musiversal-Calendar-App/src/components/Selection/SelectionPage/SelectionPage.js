@@ -3,7 +3,7 @@ import MusicianCard from '../MusicianCard/MusicianCard';
 import AvailabilityDisplay from '../AvailabilityDisplay/AvailabilityDisplay';
 import './SelectionPage.css';
 
-import config from '../../config.json';
+import config from '../../../config.json';
 
 const fetchUrl = `${config.backendUrl}/users/get-all`;
 

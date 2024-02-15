@@ -32,6 +32,30 @@ footer {
   justify-content: flex-start;
 }
 
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
+.tabs button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.tabs button.active {
+  background-color: #61dafb;
+  border-radius: 5px;
+}
+
+.tabs button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 
