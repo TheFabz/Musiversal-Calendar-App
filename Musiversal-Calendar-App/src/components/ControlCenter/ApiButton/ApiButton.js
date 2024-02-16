@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './ApiButton.css';
 import RequestBodyInputModal from '../RequestBodyInputModal/RequestBodyInputModal';
 
 import config from '../../../config.json';

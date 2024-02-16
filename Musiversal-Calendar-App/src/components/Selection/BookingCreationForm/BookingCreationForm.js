@@ -44,14 +44,14 @@ function BookingCreationForm({ slot, musicianServices, musicianId, onClose, onFo
             console.error('Error creating booking:', error);
         } finally {
             setTimeout(() => {
-                onClose(); // Close the modal after a delay
-                onFormClose(); // Trigger refresh of availability slots
-            }, 2000); // Adjust the delay time as needed
+                onClose(); 
+                onFormClose();
+            }, 2000);
         }
     };
 
     const handleNotificationClose = () => {
-        setNotification({ message: '', type: '' }); // Clear the notification message
+        setNotification({ message: '', type: '' });
     };
 
     return (

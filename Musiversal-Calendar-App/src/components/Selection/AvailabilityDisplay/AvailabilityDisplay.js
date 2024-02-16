@@ -55,7 +55,7 @@ function AvailabilityDisplay({ musician, onClose }) {
         <div className="availability-display">
             <button className="close-button" onClick={() => {
                 onClose();
-                fetchAvailabilityData(); // Refresh availability slots after modal closes
+                fetchAvailabilityData();
             }}>X</button>
             <div className="musician-info">
                 <img src={musician.imageUrl} alt={musician.name} className="musician-image" />
