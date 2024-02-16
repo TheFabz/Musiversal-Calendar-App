@@ -1,4 +1,3 @@
-// Button.js
 import React, { useState } from 'react';
 import './ApiButton.css';
 import RequestBodyInputModal from '../RequestBodyInputModal/RequestBodyInputModal';
@@ -7,15 +6,14 @@ import config from '../../../config.json';
 
 const apiBase = config.backendUrl;
 
-const Button = ({ requiresRequestBody, fetchUrl, httpVerb, buttonContent, setServerResponse }) => {
+const Button = ({ requiresRequestBody, fetchUrl, httpVerb, buttonContent, setServerResponse, requestBodyFields }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [requestBody, setRequestBody] = useState({});
 
     const handleClick = async () => {
         if (requiresRequestBody) {
             setIsModalOpen(true);
         } else {
-            await performRequest();
+            await performRequest({});
         }
     };
 
@@ -29,12 +27,11 @@ const Button = ({ requiresRequestBody, fetchUrl, httpVerb, buttonContent, setSer
         }
 
         const parsedJson = JSON.parse(inputJson);
-        setRequestBody(parsedJson);
-        await performRequest();
+        await performRequest(parsedJson);
         setIsModalOpen(false);
     };
 
-    const performRequest = async () => {
+    const performRequest = async (inputJson) => {
         try {
             let options = {
                 method: httpVerb,
@@ -44,7 +41,7 @@ const Button = ({ requiresRequestBody, fetchUrl, httpVerb, buttonContent, setSer
             };
 
             if (requiresRequestBody) {
-                options.body = JSON.stringify(requestBody);
+                options.body = JSON.stringify(inputJson);
             }
 
             const response = await fetch(apiBase + fetchUrl, options);
@@ -67,7 +64,7 @@ const Button = ({ requiresRequestBody, fetchUrl, httpVerb, buttonContent, setSer
     return (
         <>
             <button className="control-button" onClick={handleClick}>{buttonContent}</button>
-            <RequestBodyInputModal isOpen={isModalOpen} onRequestClose={handleCloseModal} onSubmit={handleSubmitModal} />
+            <RequestBodyInputModal isOpen={isModalOpen} onRequestClose={handleCloseModal} onSubmit={handleSubmitModal} requestBodyFields={requestBodyFields} />
         </>
     );
 }

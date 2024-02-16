@@ -20,6 +20,11 @@
     margin-right: 20px; /* Add some space between categories */
 }
 
+.reset button {
+    background-color: #a41818; /* Yellow background for users */
+}
+
+
 .users button {
     background-color: #FFD700; /* Yellow background for users */
 }

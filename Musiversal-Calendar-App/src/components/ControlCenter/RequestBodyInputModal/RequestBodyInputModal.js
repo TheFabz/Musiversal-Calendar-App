@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import './RequestBodyInputModal.css';
 
-const RequestBodyInputModal = ({ isOpen, onRequestClose, onSubmit }) => {
-    const [inputJson, setInputJson] = useState('');
+const RequestBodyInputModal = ({ isOpen, onRequestClose, onSubmit, requestBodyFields }) => {
+    const generateInitialJson = (fields) => {
+        const initialJson = {};
+        if (fields) {
+            fields.forEach(field => {
+                const fieldName = field.includes('[]') ? field.replace(/\[\]/g, '') : field;
+                initialJson[fieldName] = field.includes('[]') ? '[]' : '';
+            });
+        }
+        return JSON.stringify(initialJson, null, 2);
+    };
+
+    const [inputJson, setInputJson] = useState(generateInitialJson(requestBodyFields));
 
     const handleSubmit = () => {
         onSubmit(inputJson);
-        setInputJson('');
         onRequestClose();
     };
 
