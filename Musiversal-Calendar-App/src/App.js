@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import SelectionPage from './components/Selection/SelectionPage/SelectionPage';
 import BookingsPage from './components/Bookings/BookingsPage/BookingsPage';
+import ControlCenterPage from './components/ControlCenter/ControlCenterPage/ControlCenterPage';
+
 import './App.css';
 
 function App() {
@@ -30,12 +32,17 @@ function App() {
                 <div className="tabs">
                     <button className={selectedTab === 'selection' ? 'active' : ''} onClick={() => handleTabSelect('selection')}>Selection Page</button>
                     <button className={selectedTab === 'bookings' ? 'active' : ''} onClick={() => handleTabSelect('bookings')}>Bookings Page</button>
+                    <button className={selectedTab === 'control-center' ? 'active' : ''} onClick={() => handleTabSelect('control-center')}>Control Center</button>
                 </div>
             </header>
             <main className="App-main">
-                {selectedTab === 'selection' ? <SelectionPage onSelect={handleMusicianSelect} /> : <BookingsPage onClose={handleCloseAvailability} />}
-
+                {selectedTab === 'selection' ?
+                    <SelectionPage onSelect={handleMusicianSelect} /> : selectedTab === 'bookings' ?
+                        <BookingsPage onClose={handleCloseAvailability} /> : selectedTab === 'control-center' ?
+                            <ControlCenterPage /> :
+                            null}
             </main>
+
             <footer>
                 <p>Fabio Rodrigues - Feb 2024</p>
             </footer>

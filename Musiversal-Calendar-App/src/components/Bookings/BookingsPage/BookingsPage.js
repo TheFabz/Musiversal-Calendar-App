@@ -17,10 +17,10 @@ function BookingsPage() {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({}) // Adjust body if necessary
+                    body: JSON.stringify({})
                 });
                 const data = await response.json();
-                setBookings(data.bookings); // Accessing `bookings` within `data`
+                setBookings(data.bookings);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching bookings:', error);
@@ -28,11 +28,10 @@ function BookingsPage() {
             }
         };
         
-        
-
         fetchBookings();
     }, []);
 
+    console.log(bookings);
     return (
         <div className="bookings-page">
             <h2>All Bookings</h2>
