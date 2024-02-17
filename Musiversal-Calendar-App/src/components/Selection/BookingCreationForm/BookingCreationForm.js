@@ -7,6 +7,7 @@ const fetchUrl = `${config.backendUrl}/booking/create`;
 
 function BookingCreationForm({ slot, musicianServices, musicianId, onClose, onFormClose }) {
     const [notification, setNotification] = useState({ message: '', type: '' });
+    const [bookingDate, setBookingDate] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -18,7 +19,7 @@ function BookingCreationForm({ slot, musicianServices, musicianId, onClose, onFo
         const requestBody = {
             customerName,
             customerEmail,
-            bookedDate: slot.start_time.split('T')[0],
+            bookedDate: bookingDate,
             musicianId,
             availabilityId: slot.slot_id,
             requestedServices
@@ -44,7 +45,7 @@ function BookingCreationForm({ slot, musicianServices, musicianId, onClose, onFo
             console.error('Error creating booking:', error);
         } finally {
             setTimeout(() => {
-                onClose(); 
+                onClose();
                 onFormClose();
             }, 2000);
         }
@@ -76,6 +77,10 @@ function BookingCreationForm({ slot, musicianServices, musicianId, onClose, onFo
                                     <option key={index} value={service}>{service}</option>
                                 ))}
                             </select>
+                        </div>
+                        <div>
+                            <label htmlFor="bookingDate">Booking Date:</label>
+                            <input type="date" id="bookingDate" name="bookingDate" value={bookingDate} onChange={(e) => setBookingDate(e.target.value)} required />
                         </div>
                         <button type="submit">Submit</button>
                     </form>

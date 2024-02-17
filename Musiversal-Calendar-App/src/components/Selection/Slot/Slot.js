@@ -11,11 +11,17 @@ function Slot({ slot, musicianServices, musicianId, onFormClose }) {
     const [showBookingForm, setShowBookingForm] = useState(false);
 
     const toggleBookingForm = () => {
-        setShowBookingForm(!showBookingForm);
+        if (!slot.is_booked) { // Only allow toggling if the slot is available
+            setShowBookingForm(!showBookingForm);
+        }
     };
 
     return (
-        <div className={`slot ${slot.is_booked ? 'booked' : 'available'}`} onClick={!slot.is_booked ? toggleBookingForm : null}>
+        <div
+            className={`slot ${slot.is_booked ? 'booked' : 'available'}`}
+            onClick={toggleBookingForm}
+            data-testid={slot.is_booked ? 'slot-booked' : 'slot-available'} // Set data-testid based on availability
+        >
             <p>{formatDate(slot.start_time)} - {formatDate(slot.end_time)}</p>
             {showBookingForm && <BookingCreationForm slot={slot} musicianServices={musicianServices} musicianId={musicianId} onClose={toggleBookingForm} onFormClose={onFormClose} />}
         </div>

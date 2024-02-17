@@ -6,10 +6,6 @@ function NotificationBanner({ message, type, onClose }) {
         return null;
     }
 
-    console.log("IN NOTIFICATION COMPONENT!");
-    console.log('message: ' + message);
-    console.log('type: ' + type);
-
     const handleClose = () => {
         onClose();
     };
