@@ -20,8 +20,6 @@ describe('BookingCreationForm Component', () => {
             <BookingCreationForm slot={slot} musicianServices={musicianServices} musicianId={musicianId} onClose={onCloseMock} onFormClose={onFormCloseMock} />
         );
 
-        const bookingDateInput = getByLabelText('Booking Date:');
-        fireEvent.change(bookingDateInput, { target: { value: '2024-02-17' } }); 
         fireEvent.click(getByText('Submit')); 
 
         await waitFor(() => expect(getByTestId('notification-banner')).toBeInTheDocument());

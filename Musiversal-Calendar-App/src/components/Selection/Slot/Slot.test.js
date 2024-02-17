@@ -31,12 +31,10 @@ describe('Slot Component', () => {
         const availableSlot = getByTestId('slot-available');
         const bookedSlot = getByTestId('slot-booked');
 
-        // Check if available slot is clickable and triggers BookingCreationForm
         fireEvent.click(availableSlot);
         expect(BookingCreationForm).toHaveBeenCalled();
 
-        // Check if booked slot is not clickable
         fireEvent.click(bookedSlot);
-        expect(BookingCreationForm).toHaveBeenCalledTimes(1); // BookingCreationForm should not be called again
+        expect(BookingCreationForm).toHaveBeenCalledTimes(1);
     });
 });
