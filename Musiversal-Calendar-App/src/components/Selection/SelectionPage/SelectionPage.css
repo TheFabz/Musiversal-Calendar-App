@@ -63,4 +63,11 @@
     font-size: 1.5rem;
 }
 
+.message {
+    text-align:start;
+    font-size: 18px;
+    color: #555; 
+    margin-top: 20px; 
+}
+
 

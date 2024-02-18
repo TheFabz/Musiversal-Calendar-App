@@ -11,6 +11,7 @@ function SelectionPage({ onReceiveMusicians, onSelect }) {
     const [musicians, setMusicians] = useState([]);
     const [selectedMusician, setSelectedMusician] = useState(null);
     const [showAvailability, setShowAvailability] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetchMusicians();
@@ -25,8 +26,10 @@ function SelectionPage({ onReceiveMusicians, onSelect }) {
             const data = await response.json();
             setMusicians(data);
             onReceiveMusicians(data);
+            setLoading(false);
         } catch (error) {
             console.error('Error fetching musicians:', error);
+            setLoading(false);
         }
     };
 
@@ -46,13 +49,19 @@ function SelectionPage({ onReceiveMusicians, onSelect }) {
             <div className="selection-page-container">
                 <div className="selection-page">
                     <div className="musician-cards">
-                        {musicians.map((musician) => (
-                            <MusicianCard
-                                key={musician.id}
-                                musician={musician}
-                                onSelect={handleMusicianSelect}
-                            />
-                        ))}
+                        {loading ? (
+                            <p>Loading...</p>
+                        ) : musicians.length === 0 ? (
+                            <p class='message'>No musicians at this time</p>
+                        ) : (
+                            musicians.map((musician) => (
+                                <MusicianCard
+                                    key={musician.id}
+                                    musician={musician}
+                                    onSelect={handleMusicianSelect}
+                                />
+                            ))
+                        )}
                     </div>
                 </div>
                 {showAvailability && selectedMusician && (
