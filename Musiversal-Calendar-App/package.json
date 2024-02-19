@@ -41,5 +41,5 @@
     "@testing-library/react": "^14.2.1",
     "gh-pages": "^6.1.1"
   },
-  "homepage": "https://thefabz.github.io/musiversal-calendar-app"
+  "homepage": "."
 }
