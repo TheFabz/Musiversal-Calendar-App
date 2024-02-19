@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/musiversal-calendar-app/static/css/main.c0e3cf2d.css",
+    "main.js": "/musiversal-calendar-app/static/js/main.eb00107c.js",
+    "static/js/592.882d078f.chunk.js": "/musiversal-calendar-app/static/js/592.882d078f.chunk.js",
+    "index.html": "/musiversal-calendar-app/index.html",
+    "main.c0e3cf2d.css.map": "/musiversal-calendar-app/static/css/main.c0e3cf2d.css.map",
+    "main.eb00107c.js.map": "/musiversal-calendar-app/static/js/main.eb00107c.js.map",
+    "592.882d078f.chunk.js.map": "/musiversal-calendar-app/static/js/592.882d078f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0e3cf2d.css",
+    "static/js/main.eb00107c.js"
+  ]
+}
